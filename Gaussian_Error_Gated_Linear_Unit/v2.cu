@@ -1,6 +1,6 @@
 #include <cuda_runtime.h>
 
-__device__ float geglu(float a, float b) 
+__device__ __forceinline__ float geglu(float a, float b) 
 {
     return a * (b * 0.5f * (1.0f + erff(b * 0.70710678118654752f)));
 }
